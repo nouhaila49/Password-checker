@@ -1,11 +1,10 @@
 from zxcvbn import zxcvbn
 
-# Analyze a password
-password = input("your password : ")
-result = zxcvbn(password)
+def zxcvbn_check(password ):        
 
-# Display the score (0 to 4, where 4 is the strongest)
-print("Password Strength Score:", result['score'])
+    result = zxcvbn(password)
 
-# Display feedback
-print("Feedback:", result['feedback'])
+    print("Password Strength Score:", result['score'])
+
+    print("Feedback:", result['feedback'])
+    print("Entropy:", result['entropy'])
