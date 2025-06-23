@@ -7,4 +7,3 @@ def zxcvbn_check(password ):
     print("Password Strength Score:", result['score'])
 
     print("Feedback:", result['feedback'])
-    print("Entropy:", result['entropy'])
