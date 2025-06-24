@@ -1,0 +1,55 @@
+{
+  "linux": {
+    "critical_directories": [
+      "/etc",
+      "/bin",
+      "/sbin",
+      "/usr/bin",
+      "/usr/sbin",
+      "/lib",
+      "/lib64",
+      "/usr/lib",
+      "/boot",
+      "/var/log"
+    ],
+    "important_files": [
+      "/etc/passwd",
+      "/etc/shadow",
+      "/etc/sudoers",
+      "/etc/ssh/sshd_config",
+      "/etc/crontab"
+    ],
+    "optional_targets": [
+      "/root",
+      "/var/www"
+    ],
+    "excluded_paths": [
+      "/proc",
+      "/sys",
+      "/dev",
+      "/run",
+      "/tmp",
+      "/var/tmp"
+    ]
+  },
+  "windows": {
+    "critical_directories": [
+      "C:\\Windows\\System32",
+      "C:\\Windows\\SysWOW64",
+      "C:\\Windows\\System32\\drivers",
+      "C:\\Windows\\System32\\config"
+    ],
+    "important_files": [
+      "C:\\Windows\\System32\\GroupPolicy",
+      "C:\\Users\\${user}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"
+    ],
+    "optional_targets": [
+      "C:\\Program Files",
+      "C:\\Program Files (x86)"
+    ],
+    "excluded_paths": [
+      "C:\\Windows\\Temp",
+      "C:\\Users\\${user}\\AppData\\Local\\Temp"
+    ]
+  }
+}
