@@ -1,4 +1,4 @@
-import json,os,platform,hashlib
+import json,os,platform,hashlib,stat
 # on récupère les dossiers seulement, avec leur chemin complet (windows)
 def hash_file(file_path):
     import hashlib
@@ -57,6 +57,5 @@ for directory in final_dirs:
             if os.access(os.path.join(root, file), os.R_OK):
                 full_paths.append(os.path.join(root, file))
 
-#for file in full_paths:
- #   l=hash_file(file)
-print(os.stat(full_paths[1]).st_mode)
+for file in full_paths:
+    l=hash_file(file)
