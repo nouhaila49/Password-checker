@@ -9,13 +9,13 @@ def hash_file(file_path):
                 sha256.update(block)
         return sha256.hexdigest()
     except PermissionError:
-        print(f"❌ Permission denied: {file_path}")
+        print(f" Permission denied: {file_path}")
         return None
     except FileNotFoundError:
-        print(f"⚠️ File not found: {file_path}")
+        print(f" File not found: {file_path}")
         return None
     except Exception as e:
-        print(f"⚠️ Error reading {file_path}: {e}")
+        print(f" Error reading {file_path}: {e}")
         return None
 
 
