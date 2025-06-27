@@ -57,5 +57,15 @@ for directory in final_dirs:
             if os.access(os.path.join(root, file), os.R_OK):
                 full_paths.append(os.path.join(root, file))
 
-for file in full_paths:
-    l=hash_file(file)
+
+with open("hashes.txt", "w") as fichier_hashc:
+    for file in full_paths:
+        h = hash_file(file)
+        if h is not None:
+            fichier_hashc.write(f"{file} {h}\n")
+        else:
+            print(f"Skipped hashing for {file} due to error.")
+
+with open("final_hash.txt", "w") as final_hash:
+    h = hash_file("hashes.txt")
+    final_hash.write(h)
